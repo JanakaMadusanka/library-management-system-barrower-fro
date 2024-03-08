@@ -14,10 +14,11 @@ import lombok.NoArgsConstructor;
 @Entity
 public class BorrowerEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private String id;
-    private String nic;
-    private String name;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String firstName;
+    private String lastName;
+    private String email;
     private String address;
     private String dob;
     private String contact;

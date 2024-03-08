@@ -4,7 +4,6 @@ import org.example.dto.BorrowerDto;
 import org.example.entity.BorrowerEntity;
 import org.example.service.BorrowerService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 @RestController

@@ -41,7 +41,6 @@ public class BorrowerServiceImpl implements BorrowerService {
             return false;
         }
     }
-
     @Override
     public BorrowerDto getBorrowerById(Long id) {
         Optional<BorrowerEntity> byId = repository.findById(id);

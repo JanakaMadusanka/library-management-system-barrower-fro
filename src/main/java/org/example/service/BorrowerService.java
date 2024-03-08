@@ -2,7 +2,6 @@ package org.example.service;
 
 import org.example.dto.BorrowerDto;
 import org.example.entity.BorrowerEntity;
-
 import java.util.List;
 
 public interface BorrowerService {
