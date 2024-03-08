@@ -16,11 +16,7 @@ import java.util.Optional;
 public class BorrowerServiceImpl implements BorrowerService {
 
     final BorrowerRepository repository;
-    ModelMapper mapper;
-    @Bean
-    public void setup(){
-        this.mapper = new ModelMapper();
-    }
+    final ModelMapper mapper;
 
     @Override
     public void addBorrower(BorrowerDto borrowerDto) {
@@ -29,7 +25,7 @@ public class BorrowerServiceImpl implements BorrowerService {
     }
     @Override
     public List<BorrowerEntity> getBorrowers() {
-            return (List<BorrowerEntity>) repository.findAll();
+        return (List<BorrowerEntity>) repository.findAll();
     }
 
     @Override
