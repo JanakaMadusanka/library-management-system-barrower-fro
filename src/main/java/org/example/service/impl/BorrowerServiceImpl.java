@@ -6,7 +6,6 @@ import org.example.entity.BorrowerEntity;
 import org.example.repository.BorrowerRepository;
 import org.example.service.BorrowerService;
 import org.modelmapper.ModelMapper;
-import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
@@ -37,9 +36,10 @@ public class BorrowerServiceImpl implements BorrowerService {
             return false;
         }
     }
+
     @Override
-    public BorrowerDto getBorrowerById(Long id) {
-        Optional<BorrowerEntity> byId = repository.findById(id);
-        return mapper.map(byId, BorrowerDto.class);
+    public BorrowerDto getBorrowerByUserName(String userName) {
+        BorrowerEntity entity = repository.findByUserName(userName);
+        return mapper.map(entity,BorrowerDto.class);
     }
 }

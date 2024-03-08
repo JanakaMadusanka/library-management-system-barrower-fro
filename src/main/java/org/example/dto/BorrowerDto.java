@@ -10,6 +10,7 @@ import lombok.NoArgsConstructor;
 public class BorrowerDto {
     private String firstName;
     private String lastName;
+    private String userName;
     private String email;
     private String address;
     private String dob;

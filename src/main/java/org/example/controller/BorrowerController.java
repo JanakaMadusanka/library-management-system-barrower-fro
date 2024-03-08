@@ -4,7 +4,6 @@ import lombok.RequiredArgsConstructor;
 import org.example.dto.BorrowerDto;
 import org.example.entity.BorrowerEntity;
 import org.example.service.BorrowerService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -22,13 +21,13 @@ public class BorrowerController {
     public Iterable<BorrowerEntity> getBorrower(){
         return service.getBorrowers();
     }
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/delete/{id}")
     public String deleteBorrower(@PathVariable Long id){
         service.deleteBorrower(id);
         return "Deleted";
     }
-    @GetMapping("search/{id}")
-    public BorrowerDto getBorrowerById(@PathVariable Long id){
-        return service.getBorrowerById(id);
+    @GetMapping("/search/{userName}")
+    public BorrowerDto getBorrowerByUserName(@PathVariable String userName){
+        return service.getBorrowerByUserName(userName);
     }
 }

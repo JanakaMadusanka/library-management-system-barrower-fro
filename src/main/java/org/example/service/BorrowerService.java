@@ -8,5 +8,5 @@ public interface BorrowerService {
     void addBorrower(BorrowerDto borrowerDto);
     List<BorrowerEntity> getBorrowers();
     boolean deleteBorrower(Long id);
-    BorrowerDto getBorrowerById(Long id);
+    BorrowerDto getBorrowerByUserName(String userName);
 }
