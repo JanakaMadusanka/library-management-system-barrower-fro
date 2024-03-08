@@ -30,4 +30,8 @@ public class BorrowerController {
     public BorrowerDto getBorrowerByUserName(@PathVariable String userName){
         return service.getBorrowerByUserName(userName);
     }
+    @GetMapping("/isExist/{userName}")
+    public boolean isExistUser(@PathVariable String userName){
+        return service.isExistUser(userName);
+    }
 }

@@ -9,4 +9,6 @@ public interface BorrowerService {
     List<BorrowerEntity> getBorrowers();
     boolean deleteBorrower(Long id);
     BorrowerDto getBorrowerByUserName(String userName);
+
+    boolean isExistUser(String userName);
 }

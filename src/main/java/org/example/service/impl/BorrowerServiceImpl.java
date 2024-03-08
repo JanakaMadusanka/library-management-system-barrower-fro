@@ -42,4 +42,9 @@ public class BorrowerServiceImpl implements BorrowerService {
         BorrowerEntity entity = repository.findByUserName(userName);
         return mapper.map(entity,BorrowerDto.class);
     }
+
+    @Override
+    public boolean isExistUser(String userName) {
+        return repository.existsByUserName(userName);
+    }
 }
