@@ -7,11 +7,11 @@ import org.example.repository.BorrowerRepository;
 import org.example.service.BorrowerService;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
-import java.util.List;
-import java.util.Optional;
 
-@Service
+import java.util.List;
+
 @RequiredArgsConstructor
+@Service
 public class BorrowerServiceImpl implements BorrowerService {
 
     final BorrowerRepository repository;

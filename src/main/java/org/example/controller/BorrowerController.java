@@ -2,8 +2,10 @@ package org.example.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.example.dto.BorrowerDto;
+import org.example.dto.LoginDto;
 import org.example.entity.BorrowerEntity;
 import org.example.service.BorrowerService;
+import org.example.service.LoginService;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -13,9 +15,11 @@ import org.springframework.web.bind.annotation.*;
 public class BorrowerController {
 
     final BorrowerService service;
+    final LoginService loginService;
     @PostMapping("/add")
     public void addBorrower(@RequestBody BorrowerDto borrowerDto){
         service.addBorrower(borrowerDto);
+        loginService.insertLoginData(new LoginDto(borrowerDto.getEmail(),borrowerDto.getPassword()));
     }
     @GetMapping("/get")
     public Iterable<BorrowerEntity> getBorrower(){
